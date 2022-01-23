@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies</title>
+</head>
+<body>
+    <center>
+    <a href="{% url 'cpninsert' %}">Add company</a>
+    <table border=1>companies
+    <tr>
+    <th>cmpname</th>
+    <th>cmpjob</th>
+    <th>cmpsalary</th>
+</tr>
+{%for cpndisplay in company %}
+<tr>
+    <td>{{cpndisplay.id}} </td>
+    <td>{{cpndisplay.cpnname}} </td>
+    <td>{{cpndisplay.cpnjob}}</td>
+    <td>{{cpndisplay.cpnsalary}}</td>
+    <td><a href="/edit/{{cpndisplay.id}}">edit</a></td>
+    <td><a href="/delete/{{cpndisplay.id}}" onclick="return confirm('are you want to delete?')  ">delete</a></td>
+
+</tr>
+
+{%endfor%}
+</table>
+</center>
+</body>
+</html>

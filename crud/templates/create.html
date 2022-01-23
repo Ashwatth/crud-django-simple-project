@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create company</title>
+</head>
+<body>
+    <center>  Add companies
+    <form method="POST">
+        {% csrf_token %}
+    <table border=1>
+<tr>
+    <td>cmpname</td>
+    <td ><input type="text" placeholder="company name" name='cpnname'></td>
+
+</tr>
+<tr>
+    <td>cmpjob</td>
+    <td ><input type="text" placeholder="company job" name='cpnjob'></td>
+
+</tr>
+<tr>
+    <td>cmpname</td>
+    <td ><input type="text" placeholder="company name" name='cpnsalary'></td>
+
+</tr>
+    </table>
+    <input type="submit" value="add company">
+    <a href="{% url 'cpndisplay'%}">home</a>
+    {%if messages%}
+    {% for results in messages %}
+    <b> {{results}} </b>
+    {%endfor %}
+    {% endif%}
+</form>
+</center>  
+</body>
+</html>
